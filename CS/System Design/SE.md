@@ -33,4 +33,16 @@ Http response needs statusCode, headers, body
 IP/TCP focuses more on transportation of data, but http enables us to put more logic inside our request and responses.
 
 
+## Database
+
+Databases are programs that use disk or memory to do 2 core things: record data and query data.
+
+When discussing Persistence:
+
+If a data is stored in disk, wheter it is HDD or SSD, even in case of power outage, it persists.
+
+But if a data is stored in memory, the data is gone during power outage.
+
+Writing and reading from memory is much faster than from disks.
+
 
