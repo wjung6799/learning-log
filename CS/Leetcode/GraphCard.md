@@ -25,6 +25,7 @@ class UnionFind:
         return self.find(x) == self.find(y)
 ```
 $\alpha$
+\alpha
 
 | Syntax      | Union-find Constructor | Find | Union | Connected |
 | ----------- | ----------- |---|---|---|
