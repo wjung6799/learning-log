@@ -27,7 +27,7 @@ class UnionFind:
 
 ### Quick Union
 
-```
+```python
 # UnionFind class
 class UnionFind:
     def __init__(self, size):
@@ -50,7 +50,7 @@ class UnionFind:
 
 ### Union By Rank
 
-```
+```python
 # UnionFind class
 class UnionFind:
     def __init__(self, size):
@@ -80,7 +80,7 @@ class UnionFind:
 
 ### Path Compression Optimization
 
-```
+```python
 # UnionFind class
 class UnionFind:
     def __init__(self, size):
@@ -104,7 +104,7 @@ class UnionFind:
 
 ### Optimized
 
-```
+```python
 # UnionFind class
 class UnionFind:
     def __init__(self, size):
