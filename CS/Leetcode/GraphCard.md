@@ -31,7 +31,7 @@ class UnionFind:
 | Quick Union | O(N)       | O(N) |  O(N) |  O(N) |
 | Union By Rank | O(N)       | O(log N) |  O(log N) |  O(log N) |
 | Path Compression | O(N)       | O(log N) |  O(log N) |  O(log N) |
-| Optimized | O(N)       | O(\alpha N) |  O(log N) |  O(log N) |
+| Optimized | O(N) | O($\alpha$(N)) | O($\alpha$(N)) | O($\alpha$(N)) |
 ### Quick Union
 
 ```
