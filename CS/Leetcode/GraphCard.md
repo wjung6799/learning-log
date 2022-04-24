@@ -24,6 +24,7 @@ class UnionFind:
     def connected(self, x, y):
         return self.find(x) == self.find(y)
 ```
+$\alpha$
 
 | Syntax      | Union-find Constructor | Find | Union | Connected |
 | ----------- | ----------- |---|---|---|
