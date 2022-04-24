@@ -4,7 +4,7 @@
 
 ### Quick Find
 
-```
+```python
 # UnionFind class
 class UnionFind:
     def __init__(self, size):
