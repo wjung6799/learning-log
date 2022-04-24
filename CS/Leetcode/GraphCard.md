@@ -27,9 +27,11 @@ class UnionFind:
 
 | Syntax      | Union-find Constructor | Find | Union | Connected |
 | ----------- | ----------- |---|---|---|
-| Quick Find  | O(N)       | O(1) | O(N) | O(1)
-| Paragraph   | Text        |
-
+| Quick Find  | O(N)       | O(1) | O(N) | O(1) |
+| Quick Union | O(N)       | O(N) |  O(N) |  O(N) |
+| Union By Rank | O(N)       | O(log N) |  O(log N) |  O(log N) |
+| Path Compression | O(N)       | O(log N) |  O(log N) |  O(log N) |
+| Optimized | O(N)       | O(\alpha N) |  O(log N) |  O(log N) |
 ### Quick Union
 
 ```
