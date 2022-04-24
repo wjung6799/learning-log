@@ -24,8 +24,6 @@ class UnionFind:
     def connected(self, x, y):
         return self.find(x) == self.find(y)
 ```
-$\alpha$
-\alpha
 
 | Syntax      | Union-find Constructor | Find | Union | Connected |
 | ----------- | ----------- |---|---|---|
@@ -33,7 +31,7 @@ $\alpha$
 | Quick Union | O(N)       | O(N) |  O(N) |  O(N) |
 | Union By Rank | O(N)       | O(log N) |  O(log N) |  O(log N) |
 | Path Compression | O(N)       | O(log N) |  O(log N) |  O(log N) |
-| Optimized | O(N) | O($\alpha$(N)) | O($\alpha$(N)) | O($\alpha$(N)) |
+| Optimized | O(N) | O(&alpha;(N)) | O(&alpha;(N)) | O(&alpha;(N)) |
 ### Quick Union
 
 ```
