@@ -147,3 +147,9 @@ class UnionFind:
 | Optimized | O(N) | O(&alpha;(N)) | O(&alpha;(N)) | O(&alpha;(N)) |
 
 Note: NNN is the number of vertices in the graph. &alpha; refers to the Inverse Ackermann function. In practice, we assume it's a constant. 
+
+
+Problems:
+
+1. https://leetcode.com/problems/smallest-string-with-swaps/
+2. https://leetcode.com/problems/evaluate-division/
