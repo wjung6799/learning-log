@@ -157,11 +157,12 @@ Problems:
 	for this one watch https://www.youtube.com/watch?v=paePJDgZaR4
 	
 ```python
+
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
         items = set()
         
-        uf = DisjointSet(items)
+        uf = DisjointSet()
         
         for i in range(len(equations)):
             u, v = equations[i]
@@ -185,15 +186,18 @@ class Solution:
 
 class DisjointSet:
     
-    def __init__(self, items):
-        self.weight = {}
+    def __init__(self):
+    	# has both parent and the node of itself
+        self.weight = {} 
     
     def find(self, u):
         if u not in self.weight:
             self.weight[u] = (u, 1.0)
-        
+        # parent node ande the node's weight
         parent, nodeWeight = self.weight[u]
+	# if current node is not the parent. Meaning that it has a parent
         if u != parent:
+	    # This will go on until it grabs the newParent and the weight (It will multiply the weight along the way)
             newParent, parentWeight = self.find(parent)
             self.weight[u] = (newParent, nodeWeight * parentWeight)
         
