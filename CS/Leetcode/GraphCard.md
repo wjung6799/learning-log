@@ -155,3 +155,54 @@ Problems:
 2. https://leetcode.com/problems/evaluate-division/
 
 	for this one watch https://www.youtube.com/watch?v=paePJDgZaR4
+	
+```python
+class Solution:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+        items = set()
+        
+        uf = DisjointSet(items)
+        
+        for i in range(len(equations)):
+            u, v = equations[i]
+            weight = values[i]
+            uf.union(u, v, weight)
+        
+        ret = []
+        
+        for u, v in queries:
+            if u not in uf.weight or v not in uf.weight:
+                ret.append(-1.0)
+            else:
+                u, uWeight = uf.find(u)
+                v, vWeight = uf.find(v)
+                if u != v:
+                    ret.append(-1.0)
+                else:
+                    ret.append(uWeight/vWeight)
+        
+        return ret
+
+class DisjointSet:
+    
+    def __init__(self, items):
+        self.weight = {}
+    
+    def find(self, u):
+        if u not in self.weight:
+            self.weight[u] = (u, 1.0)
+        
+        parent, nodeWeight = self.weight[u]
+        if u != parent:
+            newParent, parentWeight = self.find(parent)
+            self.weight[u] = (newParent, nodeWeight * parentWeight)
+        
+        return self.weight[u]
+        
+    
+    def union(self, u, v, val):
+        u, uWeight = self.find(u)
+        v, vWeight = self.find(v)
+        if u != v:
+            self.weight[u] = (v, val * vWeight / uWeight)
+```
