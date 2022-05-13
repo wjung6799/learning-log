@@ -1,6 +1,5 @@
 # DFS
 
-
 ## Iterative DFS
 ```python
 class Graph:
