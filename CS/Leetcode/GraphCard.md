@@ -12,7 +12,7 @@ class UnionFind:
 
     def find(self, x):
         return self.root[x]
-		
+	
     def union(self, x, y):
         rootX = self.find(x)
         rootY = self.find(y)
@@ -37,7 +37,7 @@ class UnionFind:
         while x != self.root[x]:
             x = self.root[x]
         return x
-		
+	
     def union(self, x, y):
         rootX = self.find(x)
         rootY = self.find(y)
@@ -61,7 +61,7 @@ class UnionFind:
         while x != self.root[x]:
             x = self.root[x]
         return x
-		
+	
     def union(self, x, y):
         rootX = self.find(x)
         rootY = self.find(y)
@@ -91,7 +91,7 @@ class UnionFind:
             return x
         self.root[x] = self.find(self.root[x])
         return self.root[x]
-		
+	
     def union(self, x, y):
         rootX = self.find(x)
         rootY = self.find(y)
@@ -138,39 +138,39 @@ class UnionFind:
         return self.find(x) == self.find(y)
 ```
 
-| Syntax      | Union-find Constructor | Find | Union | Connected |
-| ----------- | ----------- |---|---|---|
-| Quick Find  | O(N)       | O(1) | O(N) | O(1) |
-| Quick Union | O(N)       | O(N) |  O(N) |  O(N) |
-| Union By Rank | O(N)       | O(log N) |  O(log N) |  O(log N) |
-| Path Compression | O(N)       | O(log N) |  O(log N) |  O(log N) |
-| Optimized | O(N) | O(&alpha;(N)) | O(&alpha;(N)) | O(&alpha;(N)) |
 
-Note: NNN is the number of vertices in the graph. &alpha; refers to the Inverse Ackermann function. In practice, we assume it's a constant. 
+| Syntax           | Union-find Constructor | Find          | Union         | Connected     |
+| ------------------ | ------------------------ | --------------- | --------------- | --------------- |
+| Quick Find       | O(N)                   | O(1)          | O(N)          | O(1)          |
+| Quick Union      | O(N)                   | O(N)          | O(N)          | O(N)          |
+| Union By Rank    | O(N)                   | O(log N)      | O(log N)      | O(log N)      |
+| Path Compression | O(N)                   | O(log N)      | O(log N)      | O(log N)      |
+| Optimized        | O(N)                   | O(&alpha;(N)) | O(&alpha;(N)) | O(&alpha;(N)) |
 
+Note: NNN is the number of vertices in the graph. &alpha; refers to the Inverse Ackermann function. In practice, we assume it's a constant.
 
 Problems:
 
 1. https://leetcode.com/problems/smallest-string-with-swaps/
 2. https://leetcode.com/problems/evaluate-division/
 
-	for this one watch https://www.youtube.com/watch?v=paePJDgZaR4
-	
+   for this one watch https://www.youtube.com/watch?v=paePJDgZaR4
+
 ```python
 
 class Solution:
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
         items = set()
-        
+      
         uf = DisjointSet()
-        
+      
         for i in range(len(equations)):
             u, v = equations[i]
             weight = values[i]
             uf.union(u, v, weight)
-        
+      
         ret = []
-        
+      
         for u, v in queries:
             if u not in uf.weight or v not in uf.weight:
                 ret.append(-1.0)
@@ -181,15 +181,15 @@ class Solution:
                     ret.append(-1.0)
                 else:
                     ret.append(uWeight/vWeight)
-        
+      
         return ret
 
 class DisjointSet:
-    
+  
     def __init__(self):
     	# has both parent and the node of itself
         self.weight = {} 
-    
+  
     def find(self, u):
         if u not in self.weight:
             self.weight[u] = (u, 1.0)
@@ -200,10 +200,10 @@ class DisjointSet:
 	    # This will go on until it grabs the newParent and the weight (It will multiply the weight along the way)
             newParent, parentWeight = self.find(parent)
             self.weight[u] = (newParent, nodeWeight * parentWeight)
-        
+      
         return self.weight[u]
-        
-    
+      
+  
     def union(self, u, v, val):
         u, uWeight = self.find(u)
         v, vWeight = self.find(v)
